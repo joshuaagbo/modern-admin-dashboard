@@ -1,0 +1,27 @@
+{
+  "name": "modern-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app",
+    "server": "nodemon app",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\"  \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm i --prefix client && npm run build --prefix client",
+    "server-build": "concurrently \"npm run build --prefix client\" \"npm run server\""
+  },
+  "author": "Gems",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "engines": {
+    "node": "17.x",
+    "npm": "8.x"
+  },
+  "devDependencies": {
+    "concurrently": "^6.5.1",
+    "nodemon": "^2.0.15"
+  }
+}
